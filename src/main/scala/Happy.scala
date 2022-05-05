@@ -18,5 +18,5 @@ object Happy extends App {
 
   def kThHappy(k: Int): Int = ???
 
-  println(isHappy(233))
+  println(isHappy(236))
  }
