@@ -13,8 +13,7 @@ def allPerm(n: Int): List[List[Int]] = {
           .map(p => x :: p))
   }
   val num = listBuilder(n)
-  val dim: List[List[Int]] = createPermutations(num)
-  dim
+  createPermutations(num)
   }
   println(allPerm(4))
 }
