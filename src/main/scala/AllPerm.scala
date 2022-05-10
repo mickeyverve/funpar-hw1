@@ -15,7 +15,6 @@ def allPerm(n: Int): List[List[Int]] = {
   }
   val num = listBuilder(n)
   val dim: List[List[Int]] = createPermutations(num)
-  println(dim.length)
   return dim
   }
   println(allPerm(1))
