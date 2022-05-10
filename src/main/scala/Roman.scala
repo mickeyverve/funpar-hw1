@@ -9,6 +9,4 @@ object Roman extends App {
     case Nil => ""
     case h :: t => h._1 * ( number / h._2 ) + toRomanNumerals( number % h._2, t )
   }
-
-  println(toRoman(18))
 }

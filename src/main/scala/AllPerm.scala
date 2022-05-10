@@ -1,5 +1,4 @@
 object AllPerm extends App {
-
 def allPerm(n: Int): List[List[Int]] = {
   def listBuilder(iterate : Int): List[Int] = {
     if(iterate == 1) List() :+ 1
@@ -15,7 +14,7 @@ def allPerm(n: Int): List[List[Int]] = {
   }
   val num = listBuilder(n)
   val dim: List[List[Int]] = createPermutations(num)
-  return dim
+  dim
   }
-  println(allPerm(1))
+  println(allPerm(4))
 }

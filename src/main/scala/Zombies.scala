@@ -1,9 +1,7 @@
 object Zombies extends App {
   def countBad(hs: List[Int]): Int = {
     def mergeSort(xs: List[Int]): (Int, List[Int]) = {
-
       def split_list(nums: List[Int], n: Int): (List[Int], List[Int]) = (nums.take(n), nums.drop(n))
-
       val n = xs.length / 2
       if (xs.length <= 1) (0, xs)
       else {
@@ -33,12 +31,8 @@ object Zombies extends App {
         val rSort = mergeSort(right)
         val merged = merge(lSort._2, rSort._2)
         (lSort._1 + rSort._1 + merged._1, merged._2)
-
       }
     }
-
     mergeSort(hs)._1
   }
-
-  println(countBad(List(1, 7, 22, 13, 25, 4, 10, 34, 16, 28, 19, 31)))
 }
