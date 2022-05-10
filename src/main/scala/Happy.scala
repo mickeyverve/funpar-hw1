@@ -3,17 +3,24 @@ object Happy extends App {
   def sumOfDigitsSquared(n: Int): Int = n.toString.foldLeft(0) { (product, num) => product + num.asDigit * num.asDigit}
 
   def isHappy(n: Int): Boolean = {
-    def sumOfDigitsSquared(n: Int): Int = n.toString.foldLeft(0) { (product, num) => product + num.asDigit * num.asDigit}
-    def loop(seen: Set[Int],x: Int):Boolean = {
+    def loop(x: Int):Boolean = {
       x match {
         case 1 => true
-        case _ if seen.contains(x) => false
-        case _ => loop(seen+x,sumOfDigitsSquared(x))
+        case 4 => false
+        case _ => loop(sumOfDigitsSquared(x))
       }
     }
-    loop(Set(),n)
+    loop(n)
   }
-  def kThHappy(k: Int): Int = ???
+  def kThHappy(k: Int): Int = {
+  def helper(countN: Int, countK: Int, hNum: Int): Int = countK match {
+    case _ if (countK == hNum) => countN
+    case _ if (isHappy(countN)) => helper(countN + 1, countK + 1, hNum)
+    case _ => helper(countN + 1, countK, hNum)
+  }
+    val count =helper(0,0,k)
+    count-1
+  }
 
-  println(isHappy(24))
+  print(isHappy(71))
  }
